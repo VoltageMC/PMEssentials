@@ -18,10 +18,10 @@ permissions:
     description: "change a player's nickname"
     children:
      pmessentials.nick.color:
-      default: true
+      default: op
       description: "make your nickname colored"
      pmessentials.nick.custom:
-      default: true
+      default: op
       description: "set a custom nickname"
      pmessentials.nick.self:
       default: op
@@ -91,10 +91,10 @@ permissions:
       default: op
       description: "change someone's size"
    pmessentials.realname:
-    default: true
+    default: op
     description: "view someone's real name"
    pmessentials.usage:
-    default: true
+    default: op
     description: "view the usage of a command"
    pmessentials.powertool:
     default: op
@@ -107,7 +107,7 @@ permissions:
       default: op
       description: "allows the usage of powertools"
    pmessentials.ping:
-    default: true
+    default: op
     description: "Pong!"
    pmessentials.fly:
     default: op
@@ -150,7 +150,7 @@ permissions:
       default: op
       description: "shows the world you're in"
      pmessentials.xyz.self:
-      default: true
+      default: op
       description: "shows your coordinates"
      pmessentials.xyz.other:
       default: op
@@ -194,7 +194,7 @@ permissions:
     default: true
     description: "allows /tpa"
    pmessentials.tpahere:
-    default: true
+    default: op
     description: "allows /tpahere"
    pmessentials.tpaccept:
     default: true
@@ -221,7 +221,7 @@ permissions:
     description: "clear a player's inventory"
     children:
      pmessentials.clearinventory.self:
-      default: true
+      default: op
       description: "clear your inventory"
      pmessentials.clearinventory.other:
       default: op
@@ -229,17 +229,17 @@ permissions:
    pmessentials.broadcast:
     default: op
     description: "broadcast a message"
-   pmessentials.milk:
+   pmessentials.bless:
     default: op
     description: "clear all effects"
     children:
-     pmessentials.milk.self:
+     pmessentials.bless.self:
       default: op
       description: "clear own effects"
-     pmessentials.milk.other:
+     pmessentials.bless.other:
       default: op
       description: "clear other's effects"
-     pmessentials.milk.instant:
+     pmessentials.bless.instant:
       default: op
       description: "bypass the cooldown"
    pmessentials.mute:
