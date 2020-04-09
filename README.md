@@ -21,7 +21,7 @@ List of commands:
 - [x] /god
 - [x] /heal
 - [x] /i
-- [x] /milk
+- [x] /bless
 - [x] /mute
 - [x] /nick
 - [x] /nuke
