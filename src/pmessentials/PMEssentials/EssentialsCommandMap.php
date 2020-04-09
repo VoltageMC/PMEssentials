@@ -18,7 +18,7 @@ use pmessentials\PMEssentials\command\GameModeCommand;
 use pmessentials\PMEssentials\command\GodCommand;
 use pmessentials\PMEssentials\command\HealCommand;
 use pmessentials\PMEssentials\command\ICommand;
-use pmessentials\PMEssentials\command\MilkCommand;
+use pmessentials\PMEssentials\command\BlessCommand;
 use pmessentials\PMEssentials\command\MuteCommand;
 use pmessentials\PMEssentials\command\NickCommand;
 use pmessentials\PMEssentials\command\NukeCommand;
@@ -99,7 +99,7 @@ class EssentialsCommandMap {
             new BackCommand(),
             new ClearinventoryCommand(),
             new BroadcastCommand(),
-            new MilkCommand(),
+            new BlessCommand(),
             new MuteCommand()
         ];
         foreach ($commands as $command){
@@ -243,8 +243,8 @@ class EssentialsCommandMap {
                 $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
             }
 
-            $cmd = $cmap->getCommand("milk");
-            if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof MilkCommand){
+            $cmd = $cmap->getCommand("bless");
+            if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof BlessCommand){
                 $data = $autoCompleteAPI->registerCommandData($cmd);
                 $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
             }
