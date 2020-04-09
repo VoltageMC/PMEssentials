@@ -8,6 +8,9 @@ use AndreasHGK\AutoCompleteAPI\AutoCompleteAPI;
 use AndreasHGK\AutoCompleteAPI\CustomCommandData;
 use pmessentials\PMEssentials\command\BackCommand;
 use pmessentials\PMEssentials\command\BreakCommand;
+use pmessentials\PMEssentials\command\DelHomeCommand;
+use pmessentials\PMEssentials\command\SetHomeCommand;
+use pmessentials\PMEssentials\command\HomeCommand;
 use pmessentials\PMEssentials\command\BroadcastCommand;
 use pmessentials\PMEssentials\command\BurnCommand;
 use pmessentials\PMEssentials\command\ClearinventoryCommand;
@@ -78,6 +81,9 @@ class EssentialsCommandMap {
             new ICommand(),
             new SizeCommand(),
             new RealNameCommand(), //todo: add autocompletion
+            new HomeCommand(),
+            new SetHomeCommand(),
+            new DelHomeCommand(),
             new UsageCommand(),
             new PowertoolCommand(),
             new PingCommand(),
@@ -251,6 +257,21 @@ class EssentialsCommandMap {
 
             $cmd = $cmap->getCommand("mute");
             if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof MuteCommand){
+                $data = $autoCompleteAPI->registerCommandData($cmd);
+                $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
+            }
+            $cmd = $cmap->getCommand("home");
+            if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof HomeCommand){
+                $data = $autoCompleteAPI->registerCommandData($cmd);
+                $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
+            }
+            $cmd = $cmap->getCommand("delhome");
+            if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof DelHomeCommand){
+                $data = $autoCompleteAPI->registerCommandData($cmd);
+                $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
+            }
+            $cmd = $cmap->getCommand("sethome");
+            if($cmd instanceof SimpleCommand && $cmd->getExecutor() instanceof SetHomeCommand){
                 $data = $autoCompleteAPI->registerCommandData($cmd);
                 $data->normalParameter(0, 0, CustomCommandData::ARG_TYPE_TARGET, "Player", true);
             }
